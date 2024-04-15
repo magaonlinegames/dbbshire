@@ -1,0 +1,151 @@
+html a{
+  color: inherit;
+}
+body{
+
+}
+
+.option-details-box .card-body {
+  font-size: 1rem!important;
+}
+
+
+
+  @media screen and (min-width: 910px) {
+
+  }
+#login-container{
+  font-family: arial;
+  letter-spacing: 1px;
+  font-weight: lighter;
+  margin-top: 100px;
+  padding-bottom: 30px;
+  color: silver;
+  background-image: url("img/account-bg.jpg");
+
+}
+
+header{
+  text-align: right;
+}
+header .menu{
+  padding-right: 20px;
+  display: none;
+}
+header .menu a:hover{
+  color: green;
+}
+
+header button{
+  width: 75px;
+}
+
+/* WARNING: Login Box */
+#loader-acc{
+  display: none;
+  margin-top: 20px;
+}
+#login-box{
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 5px;
+  background: rgba(0,0,0,0.5);
+}
+#loginbtn{
+  width: 130px;
+}
+
+@media screen and (max-width: 900px) {
+  #login-box{
+    width: 93%;
+  }
+}
+
+
+
+#login-top{
+  text-align: center;
+}
+#login-inputs input, #login-inputs label{
+  margin: 0;
+  margin-bottom: 0;
+  width: 80%;
+}
+#login-inputs{
+  margin-left: 5%;
+}
+#login-inputs input{
+  background: rgba(255,255,255,0.6);
+  border: none;
+  color: black;
+  text-align: center;
+}
+
+  @media screen and (max-width: 900px) {
+    #login-inputs{
+    }
+    #login-inputs input{
+      width: 90%;
+      background: rgba(255,255,255,0.6);
+      border: none;
+      border-radius: 2px;
+      color: black;
+      text-align: center;
+    }
+    #login-box{
+      width: 95%;
+    }
+  }
+#login-box button{
+  margin-top: 5px;
+  width: 75px;
+
+}
+#right-txt-login p{
+  margin: 0;
+  margin-top: 5px;
+}
+
+/* WARNING: Account */
+.account-container{
+  background: white;
+  display: none;
+  padding-top: 20px;
+}
+
+.acc-option-box{
+  display: none;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+#transfer-details input, .acc-option-box input{
+  width: 80%;
+}
+  @media screen and (max-width: 600px) {
+    #transfer-details input, .acc-option-box input{
+      width: 250px;
+    }
+  }
+
+.transfer-btn-box{
+  margin-top: 20px;
+}
+.transfer-btn-box button{
+  width: 230px;
+}
+
+#transferCon-btn-shutto, #transferCon-btn-evans, .continuebtn,{
+  display: none;
+}
+
+
+
+footer{
+  font-family: arial;
+  color: snow;
+  font-size: 120%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

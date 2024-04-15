@@ -1,0 +1,296 @@
+body{
+  font-size: 1.5rem!important;
+}
+
+#contact-bg{
+  background-image: url("img/bankbuild.jpg");
+  background-position: center;
+
+}
+
+.transaction-btn-show{
+  display: none;
+}
+.text-small{
+  font-size: 70%;
+}
+.green{
+  color: green;
+}
+.red{
+  color: red;
+}
+.headerr{
+  background: rgb(66, 14, 68)!important;
+  color: white!important;
+
+}
+
+.header a{
+  color: white!important;
+}
+.tophead{
+  font-size: 1.5rem!important;
+}
+.second-tophead{
+  background: snow!important;
+}
+.second-tophead a{
+  color: #42145f!important;
+}
+
+/************/
+#ttc li{
+  margin-left: auto;
+  margin-right: auto;
+}
+.next-btn{
+  display: none;
+}
+.login-account, #account-evans, #account-evanss{
+  display: none;
+}
+
+.alert-danger{
+  display: none;
+}
+.col-7-center{
+  text-align: center;
+}
+.active{
+  border-bottom: 1px solid rgb(66, 14, 68);
+}
+.logout-btn{
+  display: none;
+
+}
+/***********************************/
+/*Ways to bank */
+
+
+footer{
+  margin-top: 30px;
+}
+.greenbox{
+  padding: 10px 30px;
+  background-color: green;
+  width: 60%;
+}
+
+/****************************/
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: snow;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+/*********************************************************************************************************/
+
+#sign-up-btn:hover{
+  color: #42145f!important;
+}
+.small-screen-menu{
+  display: none;
+}
+
+.sidenav a{
+  font-size: 90%!important;
+}
+.home-personalloan{
+  background: #000;
+  color: snow;
+  padding: 50px;
+  border-radius: 5px;
+}
+#personalloan{
+  font-size: 2rem;
+
+}
+#personalloan h1{
+  font-size: 3rem!important;
+}
+#personalloan a{
+  color: black!important;
+}
+.smallinfo{
+  font-size: 1rem!important;
+}
+
+/************************/
+.home-switch-natwest .card{
+  border-color: transparent;
+  background-color: transparent;
+}
+.color-blue{
+  color: #42145f;
+}
+
+/***************************/
+.find-a-branch{
+  display: block;
+  overflow: hidden;
+  text-align: center!important;
+
+}
+.find-a-branch ul{
+  text-align: center;
+  overflow: hidden;
+  text-align: center;
+  padding: 5px ;
+  background: red;
+}
+.find-a-branch li{
+  text-align: center;
+  float: left;
+  margin-left: 5%;
+  list-style: none;
+  cursor: underline;
+}
+
+/**************************************/
+footer li{
+  float: left;
+  margin-right: 5%;
+  cursor: underline;
+}
+
+
+
+
+/*******************************************************************************************************/
+/*********** SMALL SCREEN ****************************/
+/***********************************************************************************************/
+@media screen and (max-width: 1020px) {
+  .small-screen-menu{
+    display: block;
+  }
+  .tophead li{
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 1005px) {
+  .login-border{
+    width: 90%;
+  }
+
+}
+
+
+.loader {
+  max-width: 15rem;
+  width: 100%;
+  height: auto;
+  stroke-linecap: round;
+}
+
+circle {
+  fill: none;
+  stroke-width: 3.5;
+  -webkit-animation-name: preloader;
+          animation-name: preloader;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-transform-origin: 170px 170px;
+          transform-origin: 170px 170px;
+  will-change: transform;
+}
+circle:nth-of-type(1) {
+  stroke-dasharray: 550;
+}
+circle:nth-of-type(2) {
+  stroke-dasharray: 500;
+}
+circle:nth-of-type(3) {
+  stroke-dasharray: 450;
+}
+circle:nth-of-type(4) {
+  stroke-dasharray: 300;
+}
+circle:nth-of-type(1) {
+  -webkit-animation-delay: -0.15s;
+          animation-delay: -0.15s;
+}
+circle:nth-of-type(2) {
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s;
+}
+circle:nth-of-type(3) {
+  -webkit-animation-delay: -0.45s;
+  -moz-animation-delay:  -0.45s;
+          animation-delay: -0.45s;
+}
+circle:nth-of-type(4) {
+  -webkit-animation-delay: -0.6s;
+  -moz-animation-delay: -0.6s;
+          animation-delay: -0.6s;
+}
+
+@-webkit-keyframes preloader {
+  50% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes preloader {
+  50% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+
+.acc-transfer-col{
+  box-shadow: none!important;
+}
