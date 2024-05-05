@@ -1448,7 +1448,7 @@ function setUserActivity(whichAcc,accHolder,accDescription, accTime,accBank){
                     }
                     if (doc.data().transfer_type == 'pending_incoming') {
                       details= 'Pending check deposit '+ doc.data().receiver_name.toUpperCase();
-                      $(".act").append("<li><div class='collapsible-header ch'><i class='material-icons grey-text'>alarm</i><p>"+details+"</p> <br/> <span class='ttx'>Available on  2nd May</span><span class='amount'>"+doc.data().amount+"</span><span class='time grey-text'>"+doc.data().date+"</span></div>  <div class='collapsible-body grey-text'> " + doc.data().status + "</div></li>");
+                      $(".act").append("<li><div class='collapsible-header ch'><i class='material-icons grey-text'>alarm</i><p>"+details+"</p> <br/> <span class='ttx'></span><span class='amount'>"+doc.data().amount+"</span><span class='time grey-text'>"+doc.data().date+"</span></div>  <div class='collapsible-body grey-text'> " + doc.data().status + "</div></li>");
                     }
                     if (doc.data().transfer_type == 'failed_transaction') {
                       details= 'Failed transaction '+ doc.data().receiver_name.toUpperCase();
