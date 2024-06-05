@@ -1462,7 +1462,7 @@ function setUserActivity(whichAcc,accHolder,accDescription, accTime,accBank){
 
                     if (doc.data().transfer_type == 'deposit') {
                       details= 'Cash deposit - '+ doc.data().receiver_name.toUpperCase();
-                      $(".act").append("<li><div class='collapsible-header ch'><i class='material-icons red-text'>arrow_back</i><p>"+details+"</p><span class='amount'>"+doc.data().amount+"</span><span class='time grey-text'>"+doc.data().date+"</span></div>  <div class='collapsible-body grey-text'> " + doc.data().status + "</div></li>");
+                      $(".act").append("<li><div class='collapsible-header ch'><i class='material-icons green-text'>arrow_forward</i><p>"+details+"</p><span class='amount'>"+doc.data().amount+"</span><span class='time grey-text'>"+doc.data().date+"</span></div>  <div class='collapsible-body grey-text'> " + doc.data().status + "</div></li>");
                     }
                   }
                   
