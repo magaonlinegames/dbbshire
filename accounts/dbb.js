@@ -1333,8 +1333,6 @@ function setUserActivity(whichAcc,accHolder,accDescription, accTime,accBank){
                 $('.lock_txt').text('Account locked');
               }
               if (MASTERACCOUNT == 'account5') {
-                $('#acc-lock').text('Account locked');
-                $('.lock_txt').text('Account locked');
                 //show old transaction
                 $('.new-transaction').addClass('hide');
                 $('.old-transaction').removeClass('hide');
