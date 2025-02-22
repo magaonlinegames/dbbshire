@@ -1387,10 +1387,6 @@ function setUserActivity(whichAcc,accHolder,accDescription, accTime,accBank){
             $('.lock_txt').text('Account locked');
             }
 
-            if (doc.data().which_account == "account5") {
-              $('#acc-lock').text('Account locked');
-            $('.lock_txt').text('Account locked');
-            }
 
           }
           else if(doc.data().account_status == 1) {
