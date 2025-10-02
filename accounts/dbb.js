@@ -145,6 +145,8 @@ function LOG_USER_OUT(){
               $(".account-001").removeClass('hide');
             }else if ( MASTERACCOUNT == 'account31') {
               $(".account-002").removeClass('hide');
+            }else if ( MASTERACCOUNT == 'account10') {
+              $(".account-khld").removeClass('hide');
             }
             else{
               $(".account-01").removeClass('hide');
