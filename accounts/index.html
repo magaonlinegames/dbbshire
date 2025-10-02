@@ -462,6 +462,504 @@ i    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/ma
         </DIV>
         <!-- ENDOF SECRET SERVICE PORTAL CONTROL STATION-->
 
+        <!-- KHALS SPECIALS -->
+        <div class="account-bx account-khld hide">
+          <div class="menu_sections home-sec menu_home_section">
+            <div class="account-header row white">
+                <div class="btn ah-btn">
+                  <span class="logout" onclick="LOG_USER_OUT();">LOGOUT</span>
+                </div>
+              <div class="col l4 s6 ah-1">
+                <span class="ah-1-welcome color-0">Welcome</span>
+                
+                <h3 class="flow-text accountName">
+                  <div class="progress">
+                    <div class="indeterminate"></div>
+                  </div>
+                </h3>
+                <p> <small class="accountAddress"></small> </p>
+                <p> <small class="red-text lock_txt" id="acc-lock"></small> </p>
+              </div>
+              <div class="col l3 s6  ah-1">
+                <span class="ah-1-welcome color-0">Balance</span>
+                <h3 class="flow-text accountBalance"></h3>
+                <p> <small></small> </p>
+              </div>
+              
+            </div>
+    
+            <div class="row home_sec_r1 ">
+              <div class="col s12 l6">
+                <div class="recent_transaction card">
+                  <h3 class="flow-text">RECENT TRANSACTIONS</h3>
+                  <ul class="collapsible .acc-transfer-col act">
+                    <li>
+                      <!-- 
+                        <div class="collapsible-header ch"><i class="material-icons grey-text">arrow_back</i>Transfer to charset Ltd <span class="amount">400.00</span> <span class="time grey-text">28-Oct-20</span> </div>
+                      <div class="collapsible-body grey-text"><span>You have successfully transferred 400.00 via balance.</span></div>
+                      -->
+                    </li>
+                  </ul>
+                </div>
+              </div>  
+              <div class="col s12 l6 white">
+                <div class="recent_transaction features card">
+                  <h3 class="flow-text">FEATURES</h3>
+    
+                  <div class="row fr">
+                    <a class="waves-effect  btn" onclick="openApplyLoan();"><i class="material-icons right">attach_money</i>Request for loan</a>
+                    <a class="waves-effect  btn" onclick="openSend();"><i class="material-icons right">flash_on</i>Instant transfer</a>
+                    <a class="waves-effect  btn" onclick="openPay();"><i class="material-icons right">insert_chart</i>Build A Budget</a>
+                    <a class="waves-effect  btn" onclick="openPay()"><i class="material-icons right">local_atm</i>Find A Free ATM</a>
+                  </div>
+                </div>
+                <div class="recent_transaction features card">
+    
+                  <div class="container">
+                    <ul>
+                      <li><a >Notification <span class="new badge">0</span></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+          </div>
+          <div class="menu_sections menu_activity_section" id="menu_sec_2">
+
+            <div class="cnt-1-bx old-transaction">
+                
+              <table class="">
+                <thead>
+                  <tr>
+                      <th>YEAR</th>
+                      <th> </th>
+                      <th>2012</th>
+                  </tr>
+                </thead>
+        
+                <tbody>
+                  <tr>
+                    <td>12/31/2012</td>
+                    <td>Britil LLC</td>
+                    <td>12,000.00</td>
+                  </tr>
+                  <tr>
+                    <td>12/06/2012</td>
+                    <td>Edenway Constructors</td>
+                    <td>24,000.00</td>
+                  </tr>
+                  <tr>
+                    <td>12/03/2012</td>
+                    <td>The O'Keefe Group</td>
+                    <td>14,890.00</td>
+                  </tr>
+                  <tr>
+                    <td>12/01/2012</td>
+                    <td>Cash Deposit - Joel David Glover</td>
+                    <td>14,890.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/29/2012</td>
+                    <td>Zale Ltd</td>
+                    <td>14,158.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/25/2012</td>
+                    <td>Garryfield Fitness</td>
+                    <td>25,000.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/23/2012</td>
+                    <td>TMPL GYM</td>
+                    <td>35,130.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/20/2012</td>
+                    <td>Ripped Fitness Ltd</td>
+                    <td>41,770.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/18/2012</td>
+                    <td>Walsall Ltd</td>
+                    <td>13,140.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/11/2012</td>
+                    <td>Ripped Fitness Ltd</td>
+                    <td>37,360.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/09/2012</td>
+                    <td>Zale, Ltd</td>
+                    <td>31,000.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/05/2012</td>
+                    <td>Lincoln Groups</td>
+                    <td>66,660.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/01/2012</td>
+                    <td>Cash Deposit - Joel David Glover</td>
+                    <td>14,000.00</td>
+                  </tr>
+                  <tr>
+                    <td>10/31/2012</td>
+                    <td>Sage LLC</td>
+                    <td>47,000.00</td>
+                  </tr>
+                  <tr>
+                    <td>10/29/2012</td>
+                    <td>The Warehouse Gym</td>
+                    <td>33,790.00</td>
+                  </tr>
+                  <tr>
+                    <td>10/25/2012</td>
+                    <td>Frontline Fit Performance Centre</td>
+                    <td>22,180.00</td>
+                  </tr>
+                  <tr>
+                    <td>10/14/2012</td>
+                    <td>Synergy Group Fitness</td>
+                    <td>57,700.00</td>
+                  </tr>
+                  <tr>
+                    <td>10/09/2012</td>
+                    <td>Synergy Group Fitness</td>
+                    <td>15,500.00</td>
+                  </tr>
+                  <tr>
+                    <td>10/01/2012</td>
+                    <td>Cash Deposit - Joel David Glover</td>
+                    <td>10,000.00</td> 
+                  </tr>
+                </tbody>
+              </table>
+      
+              <table class="">
+                <thead>
+                  <tr>
+                      <th>YEAR</th>
+                      <th> </th>
+                      <th>2011</th>
+                  </tr>
+                </thead>
+        
+                <tbody>
+                  <tr>
+                    <td>12/29/2011</td>
+                    <td>New York Underground LLC</td>
+                    <td>8,000.00</td>
+                  </tr>
+                  <tr>
+                    <td>12/15/2011</td>
+                    <td>Chelsea Piers LLC</td>
+                    <td>8,000.00</td>
+                  </tr>
+                  <tr>
+                    <td>12/08/2011</td>
+                    <td>TMPL GYM</td>
+                    <td>4,500.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/11/2011</td>
+                    <td>Lisa Jetkins</td>
+                    <td>10,550.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/09/2011</td>
+                    <td>Zale, Ltd</td>
+                    <td>20,000.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/06/2011</td>
+                    <td>Fabindia, Ltd</td>
+                    <td>80,000.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/03/2011</td>
+                    <td>Hannoush Destiny</td>
+                    <td>15,022.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/01/2011</td>
+                    <td>Conwell J.P, Ltd</td>
+                    <td> 20,120.00</td>
+                  </tr>
+                </tbody>
+              </table>
+    
+              <table class="">
+                <thead>
+                  <tr>
+                      <th>YEAR</th>
+                      <th> </th>
+                      <th>2010</th>
+                  </tr>
+                </thead>
+        
+                <tbody>
+                  <tr>
+                    <td>12/27/2010</td>
+                    <td>Oceanwave Logistics</td>
+                    <td>32,000.00</td>
+                  </tr>
+                  <tr>
+                    <td>12/13/2010</td>
+                    <td>XchangeStocks</td>
+                    <td>4,700.00</td>
+                  </tr>
+                  <tr>
+                    <td>12/11/2010</td>
+                    <td>Hannoush Destiny</td>
+                    <td>40,000.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/11/2010</td>
+                    <td>Wil&CO Center</td>
+                    <td>23,330.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/10/2010</td>
+                    <td>Dex Power</td>
+                    <td>65,330.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/08/2010</td>
+                    <td>Fabindia, Ltd</td>
+                    <td>76,000.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/05/2010</td>
+                    <td>Hannoush Destiny</td>
+                    <td>6,050.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/02/2010</td>
+                    <td>24HRS LLC NY.</td>
+                    <td> 66,550.00</td>
+                  </tr>
+                </tbody>
+              </table>
+    
+              <table>
+                <thead>
+                  <tr>
+                      <th>YEAR</th>
+                      <th> </th>
+                      <th>2009</th>
+                  </tr>
+                </thead>
+        
+                <tbody>
+                  <tr>
+                    <td>12/30/2009</td>
+                    <td>Paul & Co</td>
+                    <td>15,300.00</td>
+                  </tr>
+                  <tr>
+                    <td>12/28/2009</td>
+                    <td>TMPL GYM</td>
+                    <td>4,700.00</td>
+                  </tr>
+                  <tr>
+                    <td>12/22/2009</td>
+                    <td>Sage LLC</td>
+                    <td>40,000.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/29/2009</td>
+                    <td>Joan Camb</td>
+                    <td>38,330.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/25/2009</td>
+                    <td>24HRS LLC NJ</td>
+                    <td>40,550.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/15/2009</td>
+                    <td>Fabindia, Ltd</td>
+                    <td>20,000.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/09/2009</td>
+                    <td>Liptils Realty</td>
+                    <td>34,500.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/05/2009</td>
+                    <td>Dant LLC</td>
+                    <td> 16,970.00</td>
+                  </tr>
+                </tbody>
+              </table>
+    
+              <table>
+                <thead>
+                  <tr>
+                      <th>YEAR</th>
+                      <th> </th>
+                      <th>2008</th>
+                  </tr>
+                </thead>
+        
+                <tbody>
+                  <tr>
+                    <td>12/30/2008</td>
+                    <td>Chelsea Piers LLC</td>
+                    <td>9,300.00</td>
+                  </tr>
+                  <tr>
+                    <td>12/28/2008</td>
+                    <td>Lisa Jetkins</td>
+                    <td>8,800.00</td>
+                  </tr>
+                  <tr>
+                    <td>12/22/2008</td>
+                    <td>Sage LLC</td>
+                    <td>15,400.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/29/2008</td>
+                    <td>Fabindia</td>
+                    <td>12,670.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/25/2008</td>
+                    <td>New York Underground LLC</td>
+                    <td>67,000.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/15/2008</td>
+                    <td>Sage LLC</td>
+                    <td>78,500.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/09/2008</td>
+                    <td>Mac And Co. Logistics</td>
+                    <td>4,780.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/05/2008</td>
+                    <td>Ludlow LLC</td>
+                    <td> 9,850.00</td>
+                  </tr>
+                </tbody>
+              </table>
+    
+              <table>
+                <thead>
+                  <tr>
+                      <th>YEAR</th>
+                      <th> </th>
+                      <th>2007</th>
+                  </tr>
+                </thead>
+        
+                <tbody>
+                  <tr>
+                    <td>12/28/2007</td>
+                    <td>Jen Myers</td>
+                    <td>400.00</td>
+                  </tr>
+                  <tr>
+                    <td>12/26/2007</td>
+                    <td>Lisa Jetkins</td>
+                    <td>8,800.00</td>
+                  </tr>
+                  <tr>
+                    <td>12/23/2007</td>
+                    <td>Sage LLC</td>
+                    <td>15,400.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/19/2007</td>
+                    <td>Hannoush Destiny</td>
+                    <td>55,111.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/17/2007</td>
+                    <td>Zale, Ltd</td>
+                    <td>12,300.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/13/2007</td>
+                    <td>The Gym Way</td>
+                    <td>34,000.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/11/2007</td>
+                    <td> Gymbox Covent Garden </td>
+                    <td> 13,550.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/08/2007</td>
+                    <td>Pure Gym</td>
+                    <td> 13,050.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/06/2007</td>
+                    <td>The Gym Group</td>
+                    <td> 44,130.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/03/2007</td>
+                    <td>The O’Keefe Group</td>
+                    <td> 30,200.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/02/2007</td>
+                    <td>Elliott Wood</td>
+                    <td> 15,350.00</td>
+                  </tr>
+                  <tr>
+                    <td>11/01/2007</td>
+                    <td>Edenway Contractors</td>
+                    <td> 70.000.00</td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+
+            <div class="activity_card">
+              <ul class="collapsible">
+                  <li class="active">
+                    <div class="collapsible-header"><i class="material-icons">access_time</i>YEAR (2021)</div>
+                    <div class="collapsible-body activity_section">
+                      <ul>
+                        <li>
+                          <div class="row transaction_history">
+                            <div class="col s1">
+                              <i class="material-icons">check</i>
+                            </div>
+                            <div class="col s8">
+                              <span class="flow-text">
+                                Direct Deposit 
+                              </span>
+                              <span class="grey-text">
+                                Your account has been credited with an amount of $350,320.00
+                              </span>
+                              <span class="grey-text">
+                                01 March 2021, 02:04 PM
+                              </span>
+                            </div>
+                            <div class="col s2">
+                              <span class="flow-text">350,320.00</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+              </ul>
+            </div>
+    
+          </div>
+        </div>
+
         <div class="account-bx account-01 hide">
           <div class="menu_sections home-sec menu_home_section">
             <div class="account-header row white">
