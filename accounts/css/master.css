@@ -8,7 +8,9 @@ html,body{
   overflow: hidden;
   overflow-y: auto;
 }
-
+.old-transaction tbody{
+  display: none;
+}
 .login-bx{
   display: block;
   width: 700px;
@@ -729,4 +731,5 @@ a{
     left: 42px;
     font-size: 11px;
     color: grey;
+
 }
