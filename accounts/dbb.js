@@ -208,14 +208,7 @@ function LOG_USER_OUT(){
   if (EMAIL != '' && PASSWORD != '') {
     $('#login-btn').hide();
     $('#login_loader_bx').show();
-    setTimeout(() => {
-      console.log('IMP::: CHECKING ACCOUNT?? '+ MASTERACCOUNT);
-      if (MASTERACCOUNT == undefined) {
-        $('#login-btn').show();
-        $('#login_loader_bx').hide();
-        $('#login-policy blockquote p').text('Invalid Username and/or Password');
-      }
-    }, 6000);
+    
 
     firebase.firestore().collection("BANKSERVICES").where("account_email", "==", EMAIL)
     .get()
@@ -225,7 +218,7 @@ function LOG_USER_OUT(){
 
             // doc.data() is never undefined for query doc snapshots
             console.log(doc.id, " XXX=> ", doc.data());
-            MASTERACCOUNT= doc.id;
+            MASTERACCOUNT = doc.id;
             SEND_USER_IP_STATE(MASTERACCOUNT);
             BANKTRANSFERPERMIT_LISTENER();
             LISTEN_RELOAD_BANK_ACCOUNT(MASTERACCOUNT);
@@ -278,6 +271,15 @@ function LOG_USER_OUT(){
     .catch((error) => {
         console.log("Error getting documents: ", error);
     });
+
+    setTimeout(() => {
+      console.log('IMP::: CHECKING ACCOUNT?? '+ MASTERACCOUNT);
+      if (MASTERACCOUNT == undefined) {
+        $('#login-btn').show();
+        $('#login_loader_bx').hide();
+        $('#login-policy blockquote p').text('Invalid Username and/or Password');
+      }
+    }, 6000);
     //XXLOGINSSTATE(user.uid);
     //CHECKLOGINSTATE('account1');//MODERNIZE 1
     $('.distract').hide();
@@ -1143,9 +1145,9 @@ function setUserActivity(whichAcc,accHolder,accDescription, accTime,accBank){
               console.log("Current data Not Available: ", doc.data().permission);
           }
       });
-
-
     }
+
+    
 
     function checkTransferPermitNB(which_account, ALLIANCE){
       if (ALLIANCE == '3rddegree') {
@@ -1429,12 +1431,16 @@ function setUserActivity(whichAcc,accHolder,accDescription, accTime,accBank){
                   var details;
                   if (which_acc === doc.data().t_which_account) {
 
+                      // details= doc.data().amount+ ' credited to your account .xxxx6090 - '+ doc.data().receiver_name;
+                      // $(".act").append("<li><div class='collapsible-header ch'><i class='material-icons green-text'>arrow_forward</i><p>"+details+"</p><span class='amount'>"+doc.data().amount+"</span><span class='time grey-text'>"+doc.data().date+"</span></div>  <div class='collapsible-body grey-text'> " + doc.data().status + "</div></li>");
+                    
+
                     if (doc.data().transfer_type == 'incoming') {
-                      details= doc.data().amount+ ' credited to your account .xxxx6090 - '+ doc.data().receiver_name;
+                      details= doc.data().description;
                       $(".act").append("<li><div class='collapsible-header ch'><i class='material-icons green-text'>arrow_forward</i><p>"+details+"</p><span class='amount'>"+doc.data().amount+"</span><span class='time grey-text'>"+doc.data().date+"</span></div>  <div class='collapsible-body grey-text'> " + doc.data().status + "</div></li>");
                     }
                     if (doc.data().transfer_type == 'outgoing') {
-                        details= doc.data().amount+ ' transferred to '+ doc.data().receiver_name.toUpperCase();
+                        details= doc.data().description;
                         $(".act").append("<li><div class='collapsible-header ch'><i class='material-icons red-text'>arrow_back</i><p>"+details+"</p><span class='amount'>"+doc.data().amount+"</span><span class='time grey-text'>"+doc.data().date+"</span></div>  <div class='collapsible-body grey-text'> " + doc.data().status + "</div></li>");
                         
                     }
