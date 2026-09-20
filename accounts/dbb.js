@@ -2,6 +2,7 @@ var output;
 var MASTERDATE = 'Pending'; 
 var DATEANDTIME;
 var MASTERACCOUNT;
+var isAccountActive;
 var userName, db, ipaddress, platform, system,dateman, thisAcc; 
 //DATE and TIME AVENUE
 var fullDate = new Date();console.log(fullDate);
@@ -25,7 +26,7 @@ var IPCODE;
 $(document).ready(function(){
   $('#login_loader_bx').hide();
   $('#XXBTMCONTROL').addClass('hide');
-      dateman = realDate;
+      // dateman = realDate;
       var firebaseConfig = {
         apiKey: "AIzaSyDs1iHCLo3aMYqTqkt_fMNmrvVY0o43UKU",
         authDomain: "bankgame-9e3da.firebaseapp.com",
@@ -54,9 +55,239 @@ $(document).ready(function(){
     // TODO: Replace the following with your app's Firebase project configuration
     // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
 
+// 2026 september (login update) ????
+function logsmaster(){
+  var em = $("#acc_email").val().toLowerCase().trim();
+  var  ps = $('#acc_password').val().trim();
+  var logger = em + ps;
+
+  $('#login-btn').hide();
+  $('#login_loader_bx').show();
+
+  
+  if (em != '' && ps != '') {
+    // alert (logger);
+    var docRef = db.collection("BANKSECURITY").doc(logger);
+
+    docRef.get().then((doc) => {
+        if (doc.exists) {
+            console.log("LOGGER data:", doc.data());
+            // now get actual data from bankservice
+            GETBANKSERVICE(doc.data().account);
+
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such LOGGER!");
+            $('#login_loader_bx').hide();
+            $('#login-btn').show();
+            $('.login-error').text('The credentials provided could not be verified. Please verify your details and try again')
+
+            setTimeout(() => {
+            $('.login-error').text('');
+              
+            }, 6666);
+            
+        }
+    }).catch((error) => {
+        console.log("Error getting LOGGER:", error);
+    });
+  }
+
+}
+
+function GETBANKSERVICE(vin){
+    var docRef = db.collection("BANKSERVICES").doc(vin);
+
+    docRef.get().then((doc) => {
+        if (doc.exists) {
+            console.log("BSRVCS data:", doc.data());
+            // now show data in account
+            MASTERACCOUNT = doc.id;
+            if (MASTERACCOUNT != '') {
+              $('#XXBTMCONTROL').removeClass('hide');
+              $('#XXBTMCONTROL').show();
+              $('#XXBTMCONTROL').css("display","block");
+                $(".account-01").removeClass('hide');
+              // SEND_USER_IP_STATE(MASTERACCOUNT);
+              SEND_USER_IP_STATE2026(MASTERACCOUNT);
+              getAccountOPP(MASTERACCOUNT);
+              getTransactionsOPP(MASTERACCOUNT);
+              // LISTEN_RELOAD_BANK_ACCOUNT(MASTERACCOUNT);
+
+
+            }
+
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such account after logger!");
+        }
+    }).catch((error) => {
+        console.log("Error getting account after logger:", error);
+    });
+}
+ function SEND_USER_IP_STATE2026(ACCOUNT){
+  console.log('IP CODE:: '+ IPCODE);
+  console.log('IP ACCOUNT:: '+ ACCOUNT);
+
+  // Add a new document in collection "cities"
+  db.collection("BANK_AUTH").doc(IPCODE).set({
+      user_ip: IPCODE,
+      bank_account: ACCOUNT
+  })
+  .then(() => {
+      console.log("LOCATION successfully written!");
+  })
+  .catch((error) => {
+      console.error("Error writing LOCATION: ", error);
+  });
+  
+ }
+
+ function BANKAUTH2026(IP){
+   console.log('We are here bankauth');
+  // $('.distract').show();
+  var docRef = db.collection("BANK_AUTH").doc(IP);
+
+  docRef.get().then((doc) => {
+      if (doc.exists) {
+          console.log("Document data:", doc.data());
+          MASTERACCOUNT= doc.data().bank_account;
+          if (MASTERACCOUNT != '') {
+            $(".distract").show(); 
+            $(".loader_ui").removeClass('hide'); 
+            console.log('IP MATCHED WITH ACCOUNT: '+ MASTERACCOUNT);
+
+            $('#XXBTMCONTROL').removeClass('hide');
+            $("#nb-login").hide();
+
+
+              $(".account-01").removeClass('hide');
+
+          }
+          
+      } else {
+          // doc.data() will be undefined in this case
+          console.log("No such document!");
+          $(".distract").hide(); 
+          $(".loader_ui").addClass('hide'); 
+      }
+  }).catch((error) => {
+      console.log("Error getting document:", error);
+  });
+
+  firebase.firestore().collection("BANK_AUTH").where("user_ip", "==", IP)
+  .get()
+  .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+          //SEND IPS,COUNTRY, CITY 
+          // doc.data() is never undefined for query doc snapshots
+          console.log(doc.id, " BANKAUTH=> ", doc.data());
+          if (doc.data().bank_account == 'account1') {
+            console.log('****999');
+            $('.new-transaction').hide();
+            $('.new-transaction').addClass('hide');
+            $('.cnt-2-bx').show();
+          }
+          if (doc.data().user_ip == '') {
+             console.log(' NO IP ADDRESS MATCHED');
+          }
+          MASTERACCOUNT= doc.data().bank_account;
+          BANKTRANSFERPERMIT_LISTENER();
+          TRASACTIONS_HISTORY_LISTENER(); // 09-11-2021
+          LISTEN_RELOAD_BANK_ACCOUNT(MASTERACCOUNT);
+          if (MASTERACCOUNT != '') {
+            $(".distract").show(); 
+            $(".loader_ui").removeClass('hide'); 
+            console.log('IP MATCHED WITH ACCOUNT: '+ MASTERACCOUNT);
+            if (MASTERACCOUNT == 'account2') {
+              $('#acc-lock').text('Account inactive since April 1998');
+            }
+            $('#XXBTMCONTROL').removeClass('hide');
+            $("#nb-login").hide();
+
+            //SPECIAL REQUESTS
+            if (MASTERACCOUNT == 'account30' || MASTERACCOUNT == 'account32') {
+              $(".account-001").removeClass('hide');
+            }else if ( MASTERACCOUNT == 'account31') {
+              $(".account-002").removeClass('hide');
+            }else if ( MASTERACCOUNT == 'account10') {
+              $(".account-khld").removeClass('hide');
+            }
+            else{
+              $(".account-01").removeClass('hide');
+            }
+
+            getAccountOPP(MASTERACCOUNT);
+            getTransactionsOPP(MASTERACCOUNT);
+            //CHECKLOGINSTATE(MASTERACCOUNT);//MODERNIZE 1
+            REALTIMEUPDATES(MASTERACCOUNT);
+            checkTransferPermitNB(userName,'3rddegree');//*UNDO
+            $('#XXBTMCONTROL').show();
+            $('#XXBTMCONTROL').css("display","block");
+            $(".distract").hide(); 
+            
+          }else{
+            alert('Null');
+            console.log('XXACCOUNT IS: '+ MASTERACCOUNT);
+           
+            getAccountOPP(MASTERACCOUNT);
+            getTransactionsOPP(MASTERACCOUNT);
+            REALTIMEUPDATES(MASTERACCOUNT);
+            checkTransferPermitNB(userName,'3rddegree');//*UNDO
+            console.log('3RD DEGREE MEMBER: '+ userName);
+            $("#nb-login").hide();
+            $(".account-01").removeClass('hide');
+        
+            console.log('open Account 13 in Account 01');
+            $(".home-sec").show();
+            $(".btm-ctrl").show();
+            $(".btm-ctrl").removeClass("hide");
+            //Call database
+            $(".distract").hide(); 
+            $(".loader_ui").addClass('hide');
+          }
+      });
+  })
+  .catch((error) => {
+      console.log("Error getting documents: ", error);
+  });
+ }
+
+function LOG_USER_OUT(){
+     var IPS;
+   //GET ALL 
+   $.getJSON("https://api.ipify.org/?format=json", function(e) {
+     IPS = e.ip;
+     console.log("LOGOUT USER IP: "+ IPS);
+     if (IPS != '') {
+         $('.distract').show();
+              //DELETE 
+                db.collection('BANK_AUTH').doc(IPS).delete()
+                .then(() => {
+                    location.reload();
+                    
+                })
+                .catch((error) => {
+                    // The document probably doesn't exist.
+                    console.error("Error deleting : "+doc.id+" :", error);
+                    location.reload();
+                });
+
+          setTimeout(
+            function(){
+              location.reload();
+            }, 7000
+          );
+      }
+   
+   });
+}
+ 
+
+// END OF SEPTEMBER 2026
 
  //AUGUST 03, 2021
-function LOG_USER_OUT(){
+function LOG_USER_OUT_old(){
    var IPS;
    //GET ALL 
    $.getJSON("https://api.ipify.org/?format=json", function(e) {
@@ -105,7 +336,8 @@ function LOG_USER_OUT(){
  }
  function GETCURRENTUSER(IP){
  // $('.distract').show();
-   BANKAUTH(IP);
+   BANKAUTH2026(IP);
+  //  BANKAUTH(IP);
  }
  function BANKAUTH(IP){
    console.log('We are here bankauth');
@@ -188,7 +420,10 @@ function LOG_USER_OUT(){
   });
  }
  function SEND_USER_IP_STATE(ACCOUNT){
-  firebase.firestore().collection("BANKAUTH").add({
+  console.log('IP CODE:: '+ IPCODE);
+  console.log('IP ACCOUNT:: '+ ACCOUNT);
+  
+  firebase.firestore().collection("BANK_AUTH").add({
       user_ip: IPCODE,
       user_city: IP_CITY,
       user_country: IP_COUNTRY,
@@ -219,6 +454,7 @@ function LOG_USER_OUT(){
             // doc.data() is never undefined for query doc snapshots
             console.log(doc.id, " XXX=> ", doc.data());
             MASTERACCOUNT = doc.id;
+            isAccountActive = doc.id;
             SEND_USER_IP_STATE(MASTERACCOUNT);
             BANKTRANSFERPERMIT_LISTENER();
             LISTEN_RELOAD_BANK_ACCOUNT(MASTERACCOUNT);
@@ -296,19 +532,17 @@ function LOG_USER_OUT(){
   $('#login-policy blockquote p').text('');
  }
  function GET_IP_ADDRESS(){
+  $(".distract").show(); 
+  $(".loader_ui").removeClass('hide'); 
+
+  console.log('getting ip address');
+  
   $.getJSON("https://api.ipify.org/?format=json", function(e) {
     console.log("USER IP: "+e.ip);
-    if (e.ip != "") {
-      
-      $.get("https://ipinfo.io", function(response) {
-        IPCODE = response.ip;
-        IP_CITY = response.city;
-        IP_COUNTRY = response.country;  
-        GETCURRENTUSER(IPCODE);
-        console.log("Country of origin: "+response.city, response.country);
-      }, "jsonp");
-      return e.ip;
-    }
+    IPCODE = e.ip;
+    // IP_CITY = e.city;
+    GETCURRENTUSER(IPCODE);
+    // return e.ip;
   });
  }
  function LISTEN_RELOAD_BANK_ACCOUNT(whichAcc){
