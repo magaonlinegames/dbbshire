@@ -633,7 +633,7 @@ and (max-width: 88885774px){
   }
   .loader_ui{
     position: fixed;
-    top: 10px;
+    top: 10%;
     left: 0;
     right: 0;
   }
