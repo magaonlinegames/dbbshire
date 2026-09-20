@@ -1775,6 +1775,13 @@ function MAKE_A_TRANSFER(){
 
       fromWhichAccount = MASTERACCOUNT;
       dateTime = GetTodayDate();
+      // Current date and time
+      var now = new Date();
+      var formatted = now.toLocaleDateString();
+      var formatted1 = now.toISOString();
+      dateTime = formatted;
+      console.log(formatted1);
+
       //dateTime = currentDate();
       console.log('GOD THIS IS THE TRANSFER DATE: '+ dateTime)
       bankName = $('#transfer_bank_name').val();
@@ -1835,7 +1842,7 @@ function TRASACTIONS_HISTORY_LISTENER(){
         var transferRequest = [];
         querySnapshot.forEach((doc) => {
             //transferRequest.push(doc.data());
-            console.log('TRANSACTION_HISTORY:::: '+ doc.data().t_which_account);
+            console.log('TRANSACTION_HISTORY request:::: '+ doc.data().t_which_account);
             if (doc.data().t_which_account == MASTERACCOUNT) {
               $(".distract").show();
               $(".distract .transfer-ui").show();
