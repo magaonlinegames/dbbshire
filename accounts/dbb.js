@@ -153,6 +153,7 @@ function GETBANKSERVICE(vin){
           console.log("Document data:", doc.data());
           MASTERACCOUNT= doc.data().bank_account;
           if (MASTERACCOUNT != '') {
+            // $(".distract").hide(); 
             $(".distract").show(); 
             $(".loader_ui").removeClass('hide'); 
             console.log('IP MATCHED WITH ACCOUNT: '+ MASTERACCOUNT);
@@ -162,6 +163,10 @@ function GETBANKSERVICE(vin){
 
 
               $(".account-01").removeClass('hide');
+
+              getAccountOPP(MASTERACCOUNT);
+              getTransactionsOPP(MASTERACCOUNT);
+
 
           }
           
@@ -175,7 +180,11 @@ function GETBANKSERVICE(vin){
       console.log("Error getting document:", error);
   });
 
-  firebase.firestore().collection("BANK_AUTH").where("user_ip", "==", IP)
+// function saved 1
+ }
+
+function saved1(){
+    firebase.firestore().collection("BANK_AUTH").where("user_ip", "==", IP)
   .get()
   .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
@@ -251,7 +260,7 @@ function GETBANKSERVICE(vin){
   .catch((error) => {
       console.log("Error getting documents: ", error);
   });
- }
+}
 
 function LOG_USER_OUT(){
      var IPS;
